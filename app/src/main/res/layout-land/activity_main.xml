@@ -8,22 +8,6 @@
 
 
     <!-- Text View to display basic heading of "calculator"-->
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="194dp"
-        android:layout_height="43dp"
-        android:layout_marginStart="114dp"
-        android:layout_marginTop="58dp"
-        android:layout_marginEnd="103dp"
-        android:layout_marginBottom="502dp"
-        android:scrollbarSize="30dp"
-        android:text=" Calculator"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        android:textSize="30dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <!-- Edit Text View to input the values -->
 
@@ -31,88 +15,96 @@
 
     <!-- A button to perform multiplication. -->
 
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="194dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="28dp"
+        android:scrollbarSize="30dp"
+        android:text=" Calculator"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textSize="30dp"
+        app:layout_constraintBottom_toTopOf="@+id/num"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <EditText
         android:id="@+id/num"
-        android:layout_width="364dp"
-        android:layout_height="28dp"
-        android:layout_marginStart="72dp"
-        android:layout_marginTop="70dp"
-        android:layout_marginEnd="71dp"
-        android:layout_marginBottom="416dp"
+        android:layout_width="0dp"
+        android:layout_height="38dp"
         android:background="@android:color/white"
         android:ems="10"
         android:hint="Number"
         android:inputType="number"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.51"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.755" />
+        app:layout_constraintBaseline_toBaselineOf="@+id/butPlus"
+        app:layout_constraintEnd_toEndOf="@+id/but3"
+        app:layout_constraintStart_toStartOf="@+id/sum2" />
 
     <Button
         android:id="@+id/butPlus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="324dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="87dp"
         android:backgroundTint="@android:color/holo_red_light"
         android:onClick="addNumber"
         android:text="+"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/butsub" />
+        app:layout_constraintStart_toEndOf="@+id/num"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/but3"
+        android:id="@+id/butsub"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="1dp"
         android:backgroundTint="@android:color/holo_red_light"
         android:onClick="addNumber"
-        android:text="3"
-        app:layout_constraintEnd_toStartOf="@+id/butsub"
-        app:layout_constraintStart_toEndOf="@+id/but2"
+        android:text="-"
+        app:layout_constraintStart_toStartOf="@+id/butPlus"
         app:layout_constraintTop_toBottomOf="@+id/butPlus" />
+
+    <Button
+        android:id="@+id/butdiv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@android:color/holo_red_light"
+        android:onClick="addNumber"
+        android:text="/"
+        app:layout_constraintStart_toStartOf="@+id/butSum"
+        app:layout_constraintTop_toBottomOf="@+id/butmul" />
+
+    <Button
+        android:id="@+id/butSum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="13dp"
+        android:backgroundTint="@android:color/holo_red_light"
+        android:onClick="doSum"
+        android:text="="
+        app:layout_constraintStart_toEndOf="@+id/butDelete"
+        app:layout_constraintTop_toBottomOf="@+id/butdiv" />
+
+    <Button
+        android:id="@+id/butmul"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@android:color/holo_red_light"
+        android:onClick="addNumber"
+        android:text="*"
+        app:layout_constraintStart_toStartOf="@+id/butdiv"
+        app:layout_constraintTop_toBottomOf="@+id/butsub" />
 
     <Button
         android:id="@+id/but0"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="194dp"
         android:backgroundTint="@android:color/holo_red_light"
         android:onClick="addNumber"
         android:text="0"
-        app:layout_constraintStart_toStartOf="@+id/but7"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/but7" />
-
-    <Button
-        android:id="@+id/butback"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@android:color/holo_red_light"
-        android:onClick="doBack"
-        android:text="back"
-        app:layout_constraintStart_toStartOf="@+id/but8"
-        app:layout_constraintTop_toBottomOf="@+id/but8" />
-
-    <Button
-        android:id="@+id/but2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@android:color/holo_red_light"
-        android:onClick="addNumber"
-        android:text="2"
-        app:layout_constraintEnd_toStartOf="@+id/but3"
-        app:layout_constraintStart_toEndOf="@+id/sum2"
-        app:layout_constraintTop_toTopOf="@+id/but3" />
-
-    <Button
-        android:id="@+id/but4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@android:color/holo_red_light"
-        android:onClick="addNumber"
-        android:text="4"
-        app:layout_constraintStart_toStartOf="@+id/sum2"
-        app:layout_constraintTop_toBottomOf="@+id/sum2" />
 
     <Button
         android:id="@+id/but7"
@@ -121,52 +113,50 @@
         android:backgroundTint="@android:color/holo_red_light"
         android:onClick="addNumber"
         android:text="7"
-        app:layout_constraintStart_toStartOf="@+id/but4"
+        app:layout_constraintStart_toStartOf="@+id/but0"
         app:layout_constraintTop_toBottomOf="@+id/but4" />
 
     <Button
         android:id="@+id/sum2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="2dp"
         android:backgroundTint="@android:color/holo_red_light"
         android:onClick="doSum"
         android:text="+"
         app:layout_constraintBaseline_toBaselineOf="@+id/but1"
-        app:layout_constraintEnd_toStartOf="@+id/but2"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="@+id/but4" />
 
     <Button
-        android:id="@+id/butDelete"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:backgroundTint="@android:color/holo_red_light"
-        android:onClick="doDelete"
-        android:text="delete"
-        app:layout_constraintStart_toEndOf="@+id/but8"
-        app:layout_constraintTop_toBottomOf="@+id/but9" />
-
-    <Button
-        android:id="@+id/but6"
+        android:id="@+id/but4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="@android:color/holo_red_light"
         android:onClick="addNumber"
-        android:text="6"
-        app:layout_constraintStart_toStartOf="@+id/but3"
-        app:layout_constraintTop_toBottomOf="@+id/but3" />
+        android:text="4"
+        app:layout_constraintStart_toStartOf="@+id/but7"
+        app:layout_constraintTop_toBottomOf="@+id/sum2" />
 
     <Button
-        android:id="@+id/but8"
+        android:id="@+id/but1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:backgroundTint="@android:color/holo_red_light"
         android:onClick="addNumber"
-        android:text="8"
-        app:layout_constraintStart_toStartOf="@+id/but5"
-        app:layout_constraintTop_toBottomOf="@+id/but5" />
+        android:text="1"
+        app:layout_constraintStart_toStartOf="@+id/sum2"
+        app:layout_constraintTop_toBottomOf="@+id/num" />
+
+    <Button
+        android:id="@+id/butback"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:backgroundTint="@android:color/holo_red_light"
+        android:onClick="doBack"
+        android:text="back"
+        app:layout_constraintStart_toEndOf="@+id/but0"
+        app:layout_constraintTop_toBottomOf="@+id/but8" />
 
     <Button
         android:id="@+id/but5"
@@ -175,8 +165,61 @@
         android:backgroundTint="@android:color/holo_red_light"
         android:onClick="addNumber"
         android:text="5"
-        app:layout_constraintStart_toStartOf="@+id/but2"
+        app:layout_constraintStart_toStartOf="@+id/but8"
         app:layout_constraintTop_toBottomOf="@+id/but2" />
+
+    <Button
+        android:id="@+id/but8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@android:color/holo_red_light"
+        android:onClick="addNumber"
+        android:text="8"
+        app:layout_constraintStart_toStartOf="@+id/butback"
+        app:layout_constraintTop_toBottomOf="@+id/but5" />
+
+    <Button
+        android:id="@+id/but2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="@android:color/holo_red_light"
+        android:onClick="addNumber"
+        android:text="2"
+        app:layout_constraintStart_toStartOf="@+id/but5"
+        app:layout_constraintTop_toBottomOf="@+id/num" />
+
+    <Button
+        android:id="@+id/butDelete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="17dp"
+        android:backgroundTint="@android:color/holo_red_light"
+        android:onClick="doDelete"
+        android:text="delete"
+        app:layout_constraintStart_toEndOf="@+id/butback"
+        app:layout_constraintTop_toBottomOf="@+id/but9" />
+
+    <Button
+        android:id="@+id/but3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="@android:color/holo_red_light"
+        android:onClick="addNumber"
+        android:text="3"
+        app:layout_constraintStart_toStartOf="@+id/but6"
+        app:layout_constraintTop_toBottomOf="@+id/num" />
+
+    <Button
+        android:id="@+id/but6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@android:color/holo_red_light"
+        android:onClick="addNumber"
+        android:text="6"
+        app:layout_constraintStart_toStartOf="@+id/but9"
+        app:layout_constraintTop_toBottomOf="@+id/but3" />
 
     <Button
         android:id="@+id/but9"
@@ -187,58 +230,6 @@
         android:text="9"
         app:layout_constraintStart_toStartOf="@+id/butDelete"
         app:layout_constraintTop_toBottomOf="@+id/but6" />
-
-    <Button
-        android:id="@+id/but1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@android:color/holo_red_light"
-        android:onClick="addNumber"
-        android:text="1"
-        app:layout_constraintStart_toStartOf="@+id/sum2"
-        app:layout_constraintTop_toTopOf="@+id/but2" />
-
-    <Button
-        android:id="@+id/butdiv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@android:color/holo_red_light"
-        android:onClick="addNumber"
-        android:text="/"
-        app:layout_constraintStart_toStartOf="@+id/butmul"
-        app:layout_constraintTop_toBottomOf="@+id/butmul" />
-
-    <Button
-        android:id="@+id/butmul"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@android:color/holo_red_light"
-        android:onClick="addNumber"
-        android:text="*"
-        app:layout_constraintStart_toStartOf="@+id/butsub"
-        app:layout_constraintTop_toBottomOf="@+id/butsub" />
-
-    <Button
-        android:id="@+id/butsub"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:backgroundTint="@android:color/holo_red_light"
-        android:onClick="addNumber"
-        android:text="-"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/but3"
-        app:layout_constraintTop_toBottomOf="@+id/butPlus" />
-
-    <Button
-        android:id="@+id/butSum"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@android:color/holo_red_light"
-        android:onClick="doSum"
-        android:text="="
-        app:layout_constraintStart_toStartOf="@+id/butdiv"
-        app:layout_constraintTop_toBottomOf="@+id/butdiv" />
 
     <!-- A button to perform a modulus function. -->
 
